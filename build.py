@@ -25,15 +25,15 @@ products = [
 
 # Define the pages to be generated
 pages = [
-    {'template': 'index.html', 'context': {'title': 'Home'}, 'output': 'dist/index.html'},
-    {'template': 'services.html', 'context': {'title': 'Services', 'services': services}, 'output': 'dist/services.html'},
-    {'template': 'shop.html', 'context': {'title': 'Shop', 'products': products}, 'output': 'dist/shop.html'},
-    {'template': 'contact.html', 'context': {'title': 'Contact'}, 'output': 'dist/contact.html'},
-    {'template': 'product.html', 'context': {'title': 'Product'}, 'output': 'dist/product.html'}
+    {'template': 'index.html', 'context': {'title': 'Home'}, 'output': 'docs/index.html'},
+    {'template': 'services.html', 'context': {'title': 'Services', 'services': services}, 'output': 'docs/services.html'},
+    {'template': 'shop.html', 'context': {'title': 'Shop', 'products': products}, 'output': 'docs/shop.html'},
+    {'template': 'contact.html', 'context': {'title': 'Contact'}, 'output': 'docs/contact.html'},
+    {'template': 'product.html', 'context': {'title': 'Product'}, 'output': 'docs/product.html'}
 ]
 
-# Create dist directory if it doesn't exist
-os.makedirs('dist', exist_ok=True)
+# Create docs directory if it doesn't exist
+os.makedirs('docs', exist_ok=True)
 
 # Render each page
 for page in pages:
