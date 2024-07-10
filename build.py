@@ -25,15 +25,12 @@ products = [
 
 # Define the pages to be generated
 pages = [
-    {'template': 'index.html', 'context': {'title': 'Home'}, 'output': 'dist/index.html'},
-    {'template': 'services.html', 'context': {'title': 'Services', 'services': services}, 'output': 'dist/services.html'},
-    {'template': 'shop.html', 'context': {'title': 'Shop', 'products': products}, 'output': 'dist/shop.html'},
-    {'template': 'contact.html', 'context': {'title': 'Contact'}, 'output': 'dist/contact.html'},
-    {'template': 'product.html', 'context': {'title': 'Product'}, 'output': 'dist/product.html'}
+    {'template': 'index.html', 'context': {'title': 'Home'}, 'output': 'index.html'},
+    {'template': 'services.html', 'context': {'title': 'Services', 'services': services}, 'output': 'services.html'},
+    {'template': 'shop.html', 'context': {'title': 'Shop', 'products': products}, 'output': 'shop.html'},
+    {'template': 'contact.html', 'context': {'title': 'Contact'}, 'output': 'contact.html'},
+    {'template': 'product.html', 'context': {'title': 'Product'}, 'output': 'product.html'}
 ]
-
-# Create dist directory if it doesn't exist
-os.makedirs('dist', exist_ok=True)
 
 # Render each page
 for page in pages:
