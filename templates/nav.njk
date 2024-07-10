@@ -1,0 +1,111 @@
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: white;
+    color: rgb(39, 39, 39);
+    padding: 1em 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1em;
+}
+
+.logo a {
+    text-decoration: none;
+    color: rgb(39, 39, 39);
+    font-size: 1.5em;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: rgb(39, 39, 39);
+    padding: 0.5em 1em;
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    background: rgb(39, 39, 39);
+    border-radius: 2px;
+    display: block;
+    height: 3px;
+    margin: 4px 0;
+    width: 25px;
+}
+
+button.get-in-touch {
+  height: 45px;
+  width: 125px;
+  border-radius: 100px;
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background: white;
+        width: 100%;
+        display: none;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+}
+</style>
+
+    <header>
+      <div class="container">
+        <div class="logo">
+          <a href="/">
+            <img src="../static/logo.svg" width="151" height="65" >
+          </a>
+        </div>
+        <nav>
+          <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Shop</a></li>
+            <li><a href="#">Plans & Pricing</a></li>
+            <li><a href="#">Book Online</a></li>
+            <li><button class="get-in-touch">Get In Touch</button></li>
+          </ul>
+        </nav>
+        <div class="menu-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </header>

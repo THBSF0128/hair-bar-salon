@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section id="contact">
+  <h2>Contact Us</h2>
+  <div class="contact-details">
+    <p>Address: 123 Salon St, Fresno, CA</p>
+    <p>Phone: (123) 456-7890</p>
+    <form action="contact.html" method="post">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email">
+      <label for="message">Message:</label>
+      <textarea id="message" name="message"></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </div>
+  <div class="social-media">
+    <a href="https://facebook.com/thehairbarsalon"><img src="static/facebook-icon.png" alt="Facebook"></a>
+    <a href="https://instagram.com/thehairbarsalon"><img src="static/instagram-icon.png" alt="Instagram"></a>
+  </div>
+</section>
+{% endblock %}
+
