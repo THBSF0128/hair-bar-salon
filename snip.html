@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snipcart 3.0 Cart Persistence Example</title>
+    <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.css" />
+</head>
+<body>
+    <header>
+        <h1>My Store</h1>
+        <div class="snipcart-summary">
+            <a href="#" class="snipcart-checkout">
+                Cart (<span class="snipcart-items-count"></span>)
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <div class="product">
+            <h2>Sample Product</h2>
+            <button class="snipcart-add-item"
+                data-item-id="sample-product"
+                data-item-price="19.99"
+                data-item-url="/"
+                data-item-description="A sample product for testing"
+                data-item-image="/path/to/image.jpg"
+                data-item-name="Sample Product">
+                Add to cart
+            </button>
+        </div>
+    </main>
+
+    <script async src="https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.js"></script>
+    <div hidden id="snipcart" data-api-key="OTA5YmQ3YzUtODBhNy00NWIzLWFkZDktNGEwODc1NjkxNjhhNjM4NTYxNDI1MTQwMzQ3MTE0"></div>
+
+    <script>
+        document.addEventListener('snipcart.ready', function() {
+            // Snipcart is ready
+            console.log('Snipcart is ready');
+        });
+    </script>
+</body>
+</html>

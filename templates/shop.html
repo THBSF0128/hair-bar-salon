@@ -1,27 +1,41 @@
 {% extends "base.html" %}
 
-{% block content %}
-<script>
-  window.SnipcartSettings = {
-      publicApiKey: 'OTA5YmQ3YzUtODBhNy00NWIzLWFkZDktNGEwODc1NjkxNjhhNjM4NTYxNDI1MTQwMzQ3MTE0',
-      loadStrategy: 'on-user-interaction',
-  };
+{% set abs_path %}{% endset %}
 
-  (()=>{var c,d;(d=(c=window.SnipcartSettings).version)!=null||(c.version="3.0");var s,S;(S=(s=window.SnipcartSettings).timeoutDuration)!=null||(s.timeoutDuration=2750);var l,p;(p=(l=window.SnipcartSettings).domain)!=null||(l.domain="cdn.snipcart.com");var w,u;(u=(w=window.SnipcartSettings).protocol)!=null||(w.protocol="https");var f=window.SnipcartSettings.version.includes("v3.0.0-ci")||window.SnipcartSettings.version!="3.0"&&window.SnipcartSettings.version.localeCompare("3.4.0",void 0,{numeric:!0,sensitivity:"base"})===-1,m=["focus","mouseover","touchmove","scroll","keydown"];window.LoadSnipcart=o;document.readyState==="loading"?document.addEventListener("DOMContentLoaded",r):r();function r(){window.SnipcartSettings.loadStrategy?window.SnipcartSettings.loadStrategy==="on-user-interaction"&&(m.forEach(t=>document.addEventListener(t,o)),setTimeout(o,window.SnipcartSettings.timeoutDuration)):o()}var a=!1;function o(){if(a)return;a=!0;let t=document.getElementsByTagName("head")[0],e=document.querySelector("#snipcart"),i=document.querySelector(`src[src^="${window.SnipcartSettings.protocol}://${window.SnipcartSettings.domain}"][src$="snipcart.js"]`),n=document.querySelector(`link[href^="${window.SnipcartSettings.protocol}://${window.SnipcartSettings.domain}"][href$="snipcart.css"]`);e||(e=document.createElement("div"),e.id="snipcart",e.setAttribute("hidden","true"),document.body.appendChild(e)),v(e),i||(i=document.createElement("script"),i.src=`${window.SnipcartSettings.protocol}://${window.SnipcartSettings.domain}/themes/v${window.SnipcartSettings.version}/default/snipcart.js`,i.async=!0,t.appendChild(i)),n||(n=document.createElement("link"),n.rel="stylesheet",n.type="text/css",n.href=`${window.SnipcartSettings.protocol}://${window.SnipcartSettings.domain}/themes/v${window.SnipcartSettings.version}/default/snipcart.css`,t.prepend(n)),m.forEach(g=>document.removeEventListener(g,o))}function v(t){!f||(t.dataset.apiKey=window.SnipcartSettings.publicApiKey,window.SnipcartSettings.addProductBehavior&&(t.dataset.configAddProductBehavior=window.SnipcartSettings.addProductBehavior),window.SnipcartSettings.modalStyle&&(t.dataset.configModalStyle=window.SnipcartSettings.modalStyle),window.SnipcartSettings.currency&&(t.dataset.currency=window.SnipcartSettings.currency),window.SnipcartSettings.templatesUrl&&(t.dataset.templatesUrl=window.SnipcartSettings.templatesUrl))}})();
-</script>
+{% block head %}
+<link rel="stylesheet" href="static/shop.css">
+{% endblock %}
+
+{% block content %}
 <section id="shop">
-  <h2>Shop Our Products</h2>
+  <!--<h2>Shop Our Products</h2>-->
   <div class="product-list">
     {% for product in products %}
-    <div class="product">
-      <img src="static/{{ product.image }}" alt="Product Image">
-      <h3>{{ product.name }}</h3>
-      <p>{{ product.description }}</p>
-      <p>Price: {{ product.price }}</p>
-      <button>Add to Cart</button>
-    </div>
+    <a href="product-page/{{ product['data-item-url'] }}.html" class="product">
+      <img class="product-image" src="static/img/product/{{ product['data-item-image'] }}" alt="Product Image">
+      <div>
+        <h3>{{ product['data-item-name'] }}</h3>
+        {% if product['in-stock'] %}
+        <p>{{ product['price'] }}</p>
+        {% else %}
+        <p>Out of stock</p>
+        {% endif %}
+      </div>
+    </a>
     {% endfor %}
   </div>
 </section>
+{% endblock %}
+
+{% block javascript %}
+<script>
+const productImages = document.querySelectorAll('.product-image');
+
+productImages.forEach(image => {
+  image.addEventListener('load', () => {
+    image.classList.add('loaded');
+  });
+});
+</script>
 {% endblock %}
 

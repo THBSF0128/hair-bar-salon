@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Shop</title>
+    <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.css" />
+</head>
+<body>
+    <!-- Your product listing goes here -->
+    
+    <!-- Snipcart -->
+    <div hidden id="snipcart" data-api-key="OTA5YmQ3YzUtODBhNy00NWIzLWFkZDktNGEwODc1NjkxNjhhNjM4NTYxNDI1MTQwMzQ3MTE0"></div>
+    <script async src="https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.js"></script>
+
+    <button class="snipcart-add-item"
+        data-item-id="1"
+        data-item-name="Sample Product"
+        data-item-price="19.99"
+        data-item-url="/"
+        data-item-description="This is a sample product.">
+        Add to cart
+    </button>
+
+    <script>
+    document.addEventListener('snipcart.ready', () => {
+        // Function to store cart items in local storage
+        function storeCartItems() {
+            const cart = Snipcart.store.getState().cart;
+            if (cart && Array.isArray(cart.items)) {
+                const cartItems = cart.items.map(item => ({
+                    id: item.id,
+                    name: item.name,
+                    price: item.price,
+                    quantity: item.quantity
+                }));
+
+                localStorage.setItem('snipcart_items', JSON.stringify(cartItems));
+            } else {
+                localStorage.removeItem('snipcart_items'); // Clear storage if cart is empty or undefined
+            }
+        }
+
+        // Listen for cart updates
+        Snipcart.events.on('cart.updated', storeCartItems);
+
+        // Store cart items on initial load
+        storeCartItems();
+    });
+    </script>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const storedCartItems = localStorage.getItem('snipcart_items');
+
+        if (storedCartItems) {
+            const cartItems = JSON.parse(storedCartItems);
+            
+            // Example of using stored cart items
+            cartItems.forEach(item => {
+                console.log(`Item ID: ${item.id}, Name: ${item.name}, Quantity: ${item.quantity}`);
+            });
+        }
+    });
+    </script>
+</body>
+</html>

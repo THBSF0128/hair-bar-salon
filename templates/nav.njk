@@ -1,111 +1,65 @@
-<style>
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-}
-
-header {
-    background-color: white;
-    color: rgb(39, 39, 39);
-    padding: 1em 0;
-    border-bottom: 1px solid #ccc;
-}
-
-.container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1em;
-}
-
-.logo a {
-    text-decoration: none;
-    color: rgb(39, 39, 39);
-    font-size: 1.5em;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    margin: 0;
-    padding: 0;
-}
-
-nav a {
-    text-decoration: none;
-    color: rgb(39, 39, 39);
-    padding: 0.5em 1em;
-}
-
-.menu-toggle {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-}
-
-.menu-toggle span {
-    background: rgb(39, 39, 39);
-    border-radius: 2px;
-    display: block;
-    height: 3px;
-    margin: 4px 0;
-    width: 25px;
-}
-
-button.get-in-touch {
-  height: 45px;
-  width: 125px;
-  border-radius: 100px;
-}
-.nav-links {
-  display: flex;
-  align-items: center;
-}
-
-@media (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
-        position: absolute;
-        top: 70px;
-        right: 0;
-        background: white;
-        width: 100%;
-        display: none;
-        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    }
-
-    nav ul.active {
-        display: flex;
-    }
-
-    .menu-toggle {
-        display: flex;
-    }
-}
-</style>
+    <div id="cart-sidebar">
+      <div class="cart-header">
+        <span id="close-sidebar">&gt;</span>
+        <h2>Cart</h2>
+      </div>
+      <div class="cart-content">
+        <div class="cart-item">
+          <div class="item-image">
+            <img src="{{ abs_path }}static/img/product/B3_Color_Care_Conditioner.jpg" >
+          </div>
+          <div class="item-details">
+            <h3>B3 Color Care Shampoo</h3>
+            <p>$24.00</p>
+            <div class="quantity-control">
+              <button class="decrement" >-</button>
+              <input value="1" />
+              <button class="increment" >+</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="subtotal">
+        <strong>Subtotal</strong>
+        <div>$24.00</div>
+      </div>
+      <button class="view-cart-btn">View Cart</button>
+    </div>
 
     <header>
-      <div class="container">
+      <div class="top-bar" >
+        <a href="tel:5594491525" >(559) 449-1525</a>
+        <div>
+          <a href="https://www.facebook.com/THBSF" target="_blank" ><img src="{{ abs_path | safe }}static/img/fb.png" width="28" height="28" ></a>
+          <a href="https://instagram.com/thehairbarsalon_" target="_blank" ><img src="{{ abs_path | safe }}static/img/ig.png" width="28" height="28" ></a>
+          <a id="shopping-bag" >
+            <svg width="24" height="28.8" viewBox="0 0 164.9 196.4" preserveAspectRatio="xMinYMax meet" data-hook="svg-icon-9">
+              <path d="M81.9 11.5c-18.8 0-34.1 16-34.1 35.7v18.1h7.8V47.2c0-15.4 11.8-27.9 26.4-27.9 14.5 0 26.4 12.5 26.4 27.9v18.1h6.6V64h1.1V47.2c-.1-19.7-15.4-35.7-34.2-35.7z"></path>
+              <path d="M156.9 70.5v118H8v-118h148.9m8-8H0v134h164.9v-134z"></path>
+            </svg>
+            <div>1</div>
+          </a>
+        </div>
+      </div>
+      <div class="navtainer">
         <div class="logo">
-          <a href="/">
-            <img src="../static/logo.svg" width="151" height="65" >
+          <a href="{{ abs_path }}index.html">
+            <img src="{{ abs_path | safe }}static/img/logo.svg" width="151" height="65" alt="Logo" >
           </a>
         </div>
         <nav>
           <ul class="nav-links">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Shop</a></li>
-            <li><a href="#">Plans & Pricing</a></li>
-            <li><a href="#">Book Online</a></li>
-            <li><button class="get-in-touch">Get In Touch</button></li>
+            <li><a href="{{ abs_path | safe }}index.html">Home</a></li>
+            <li><a href="{{ abs_path | safe }}shop.html">Shop</a></li>
+            {#<li><a href="#">Plans & Pricing</a></li>#}
+            <li><a href="{{ abs_path | safe }}book-online.html">Book Online</a></li>
+            <li><a class="get-in-touch" href="#">Get In Touch</a></li>
           </ul>
         </nav>
-        <div class="menu-toggle">
+        <button class="menu-toggle" aria-label="Toggle menu">
           <span></span>
           <span></span>
           <span></span>
-        </div>
+        </button>
       </div>
     </header>

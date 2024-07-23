@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% set abs_path %}../{% endset %}
+
+{% block head %}
+<link rel="stylesheet" href="../static/shop.css">
+{% endblock %}
+
+{% block content %}
+<section class="product">
+  <div>
+    <div class="breadcrumb-container">
+      <div class="breadcrumb">
+        <a href="{{ abs_path }}index.html">Home</a> / <a href="{{ abs_path }}shop.html">Shop</a> / <span>B3 Color Care Shampoo</span>
+      </div>
+      <div class="navigation-links">
+        <a {% if prev|length %}href="{{ prev }}"{% else %}disabled{% endif %} class="prev">&lt; Prev</a>
+        <span class="separator">|</span>
+        <a {% if next|length %}href="{{ next }}"{% else %}disabled{% endif %} class="next">Next &gt;</a>
+      </div>
+    </div>
+
+    <img src="../static/img/product/{{ product['data-item-image'] }}" >
+    <div class="product-info">
+      <h1>{{ product['data-item-name'] }}</h1>
+      <h2>{{ product['data-item-price'] }}</h2>
+    </div>
+
+    <button class="snipcart-add-item"
+      data-item-id="{{ product['data-item-id'] }}"
+      data-item-name="{{ product['data-item-name'] }}"
+      data-item-price="{{ product['data-item-price'] }}"
+      data-item-url="{{ product['data-item-url'] }}"
+      data-item-description="{{ product['data-item-description'] }}">
+      Add to cart
+    </button>
+
+  </div>
+</div>
+{% endblock %}
+
+{% block javascript %}
+{% endblock %}

@@ -1,4 +1,5 @@
 import os
+import json
 from jinja2 import Environment, FileSystemLoader
 
 # Set up Jinja2 environment
@@ -11,17 +12,43 @@ def render_template(template_name, context, output_file):
     with open(output_file, 'w') as f:
         f.write(output)
 
+def render_products(items):
+    for i in range(len(items)):
+        current = items[i]
+        prev_item = items[i - 1] if i > 0 else None
+        next_item = items[i + 1] if i < len(items) - 1 else None
+        
+        prev_url = ''
+        next_url = ''
+        if prev_item:
+            prev_url = f"{prev_item['data-item-url']}.html"
+        if next_item:
+            next_url = f"{next_item['data-item-url']}.html"
+
+        context = {
+          'title' : current['data-item-name'],
+          'product': current,
+          'next' : next_url,
+          'prev' : prev_url
+        }
+        template = env.get_template('shop-item.njk')
+        output = template.render(context)
+        output_file = f"product-page/{current['data-item-id']}.html"
+        with open(output_file, 'w') as f:
+            f.write(output)
+
 services = [
     {'name': 'Haircuts', 'description': 'Professional haircuts for all styles.', 'price': '$30'},
     {'name': 'Coloring', 'description': 'High-quality hair coloring services.', 'price': '$50'}
     # Add more services as needed
 ]
 
-products = [
-    {'name': 'Shampoo', 'description': 'High-quality shampoo.', 'price': '$10', 'image': 'shampoo.jpg'},
-    {'name': 'Conditioner', 'description': 'High-quality conditioner.', 'price': '$12', 'image': 'conditioner.jpg'}
-    # Add more products as needed
-]
+#products = [
+#    {'name': 'Shampoo', 'description': 'High-quality shampoo.', 'price': '$10', 'image': 'shampoo.jpg'},
+#    {'name': 'Conditioner', 'description': 'High-quality conditioner.', 'price': '$12', 'image': 'conditioner.jpg'}
+#]
+with open('products.json', 'r') as file:
+    products = json.load(file)
 
 # Define the pages to be generated
 pages = [
@@ -29,12 +56,16 @@ pages = [
     {'template': 'services.html', 'context': {'title': 'Services', 'services': services}, 'output': 'services.html'},
     {'template': 'shop.html', 'context': {'title': 'Shop', 'products': products}, 'output': 'shop.html'},
     {'template': 'contact.html', 'context': {'title': 'Contact'}, 'output': 'contact.html'},
-    {'template': 'product.html', 'context': {'title': 'Product'}, 'output': 'product.html'}
+    {'template': 'product.html', 'context': {'title': 'Product'}, 'output': 'product.html'},
+    {'template': 'stylists.html', 'context': {'title': 'The Hair Bar Salon Stylists'}, 'output': 'stylists.html'},
+    {'template': 'book-online.html', 'context': {'title': 'Booking'}, 'output': 'book-online.html'},
+    {'template': 'cart.html', 'context': {'title': 'My cart'}, 'output': 'cart.html'}
 ]
 
 # Render each page
 for page in pages:
     render_template(page['template'], page['context'], page['output'])
 
-print("\r\nStatic site generated.\r\n")
+render_products(products)
 
+print("\r\nStatic site generated.\r\n")

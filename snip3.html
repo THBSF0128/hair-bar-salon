@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snipcart 3.0 Cart Persistence Example - Advanced Troubleshooting</title>
+    <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.3.1/default/snipcart.css" />
+</head>
+<body>
+    <header>
+        <h1>My Store</h1>
+        <div class="snipcart-summary">
+            <a href="#" class="snipcart-checkout">
+                Cart (<span class="snipcart-items-count"></span>)
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <div class="product">
+            <h2>Sample Product</h2>
+            <button class="snipcart-add-item"
+                data-item-id="sample-product"
+                data-item-price="19.99"
+                data-item-url="/"
+                data-item-description="A sample product for testing"
+                data-item-image="/path/to/image.jpg"
+                data-item-name="Sample Product">
+                Add to cart
+            </button>
+        </div>
+    </main>
+
+    <script>
+        // Debug: Check if localStorage is available and functioning
+        try {
+            localStorage.setItem('test', 'test');
+            localStorage.removeItem('test');
+            console.log('localStorage is available');
+        } catch (e) {
+            console.error('localStorage is not available:', e);
+        }
+
+        // Debug: Log any existing Snipcart data in localStorage
+        console.log('Existing Snipcart data:', localStorage.getItem('snipcart-cart'));
+    </script>
+
+    <script async src="https://cdn.snipcart.com/themes/v3.3.1/default/snipcart.js"></script>
+    <div hidden id="snipcart" data-api-key="OTA5YmQ3YzUtODBhNy00NWIzLWFkZDktNGEwODc1NjkxNjhhNjM4NTYxNDI1MTQwMzQ3MTE0" data-config-add-product-behavior="none"></div>
+
+    <script>
+        document.addEventListener('snipcart.ready', function() {
+            console.log('Snipcart is ready');
+            
+            // Debug: Log the current cart state
+            Snipcart.store.subscribe(() => {
+                console.log('Current cart:', Snipcart.store.getState());
+            });
+
+            // Debug: Manually persist cart data
+            Snipcart.events.on('cart.confirmed', (cartState) => {
+                localStorage.setItem('manual-cart-backup', JSON.stringify(cartState));
+                console.log('Cart manually persisted');
+            });
+
+            // Debug: Check for manually persisted cart data on page load
+            const manualCartBackup = localStorage.getItem('manual-cart-backup');
+            if (manualCartBackup) {
+                console.log('Found manually persisted cart:', JSON.parse(manualCartBackup));
+                // You could potentially restore this cart if Snipcart's built-in persistence fails
+            }
+
+            // Debug: Force a cart update to trigger persistence
+            Snipcart.api.cart.update({}).then(() => {
+                console.log('Cart forcefully updated');
+            });
+        });
+
+        // Debug: Log when page is about to unload
+        window.addEventListener('beforeunload', function (e) {
+            console.log('Page is about to unload. Current Snipcart data:', localStorage.getItem('snipcart-cart'));
+        });
+    </script>
+</body>
+</html>
