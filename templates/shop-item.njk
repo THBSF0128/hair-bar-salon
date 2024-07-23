@@ -26,6 +26,8 @@
       <h2>{{ product['data-item-price'] }}</h2>
     </div>
 
+    {% if product['in-stock'] %}
+
     <button class="snipcart-add-item"
       data-item-id="{{ product['data-item-id'] }}"
       data-item-name="{{ product['data-item-name'] }}"
@@ -34,6 +36,9 @@
       data-item-description="{{ product['data-item-description'] }}">
       Add to cart
     </button>
+    {% else %}
+    <button>Out of Stock</button>
+    {% endif %}
 
   </div>
 </div>
