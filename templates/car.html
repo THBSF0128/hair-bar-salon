@@ -19,13 +19,6 @@
       <li class="glide__slide">Slide 5</li>
     </ul>
   </div>
-  <div class="glide__bullets" data-glide-el="controls[nav]">
-    <button class="glide__bullet" data-glide-dir="=0"></button>
-    <button class="glide__bullet" data-glide-dir="=1"></button>
-    <button class="glide__bullet" data-glide-dir="=2"></button>
-    <button class="glide__bullet" data-glide-dir="=3"></button>
-    <button class="glide__bullet" data-glide-dir="=4"></button>
-  </div>
 </div>
 {% endblock %}
 
@@ -38,10 +31,10 @@ document.addEventListener('DOMContentLoaded', function () {
   new Glide('.glide', {
     type: 'carousel',
     startAt: 0,
-    perView: 1, // Default number of items
+    perView: 3, // Default number of items
     breakpoints: {
       768: {
-        perView: 3 // Number of items above 768px
+        perView: 1 // Number of items above 768px
       }
     }
   }).mount();

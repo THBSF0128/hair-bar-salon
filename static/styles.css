@@ -370,52 +370,65 @@ section#services > div h2 {
 
 /* carousel */
 .glide {
-  position: relative; /* Position relative to contain absolutely positioned elements */
+  position: relative;
+  overflow: hidden;
 }
 
 .glide__arrows {
   position: absolute;
   top: 50%;
-  width: 100%;
+  width: calc(100% - 40px); /* Full width minus arrow width (20px each) */
   display: flex;
   justify-content: space-between;
   transform: translateY(-50%);
-  pointer-events: none; /* Allow clicks through the container */
+  pointer-events: none;
+  z-index: 10;
+  left: 20px; /* Align arrows within the visible area */
 }
 
 .glide__arrow {
-  pointer-events: auto; /* Allow clicks on the buttons */
+  pointer-events: auto;
   background: none;
   border: none;
   font-size: 2em;
   color: #333;
   cursor: pointer;
   outline: none;
-  padding: 0 20px;
+  padding: 0;
   transition: color 0.2s;
+  width: 20px; /* Adjust width if necessary */
 }
 
 .glide__arrow:hover {
   color: #000;
 }
 
-.glide__arrow--left {
-  text-align: left;
-}
-
-.glide__arrow--right {
-  text-align: right;
-}
-
 .glide__track {
-  padding: 0 40px; /* Space for arrows, adjust as needed */
+  padding: 0 40px; /* Padding equal to the combined width of both arrows */
+  position: relative;
+  z-index: 5;
+  overflow: hidden;
+}
+
+.glide__slides {
+  display: flex;
+  gap: 10px; /* Space between slides */
 }
 
 .glide__slide {
+  flex: 0 0 auto;
+  width: calc(100% / 3 - 40px); /* Full width divided by the number of slides per view, minus arrow width */
   text-align: center;
   padding: 20px;
   box-sizing: border-box;
   background: #eee;
+}
+
+.glide__bullets {
+  text-align: center;
+  margin-top: 10px;
+  z-index: 5;
+  position: relative;
 }
 /* end carousel */
 
