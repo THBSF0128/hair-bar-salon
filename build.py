@@ -52,7 +52,8 @@ pages = [
     {'template': 'product.html', 'context': {'title': 'Product'}, 'output': 'product.html'},
     {'template': 'services.html', 'context': {'title': 'Services'}, 'output': 'services.html'},
     {'template': 'book-online.html', 'context': {'title': 'Booking'}, 'output': 'book-online.html'},
-    {'template': 'education.html', 'context': {'title': 'Education'}, 'output': 'education.html'}
+    {'template': 'education.html', 'context': {'title': 'Education'}, 'output': 'education.html'},
+    {'template': 'car.html', 'context': {'title': 'Carousel'}, 'output': 'car.html'}
 ]
 
 # Render each page

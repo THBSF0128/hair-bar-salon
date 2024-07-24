@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ abs_path | safe }}static/glide.core.min.css">
+{% endblock %}
+
+{% block content %}
+<div class="glide">
+  <div class="glide__arrows" data-glide-el="controls">
+    <button class="glide__arrow glide__arrow--left" data-glide-dir="<">‹</button>
+    <button class="glide__arrow glide__arrow--right" data-glide-dir=">">›</button>
+  </div>
+  <div class="glide__track" data-glide-el="track">
+    <ul class="glide__slides">
+      <li class="glide__slide">Slide 1</li>
+      <li class="glide__slide">Slide 2</li>
+      <li class="glide__slide">Slide 3</li>
+      <li class="glide__slide">Slide 4</li>
+      <li class="glide__slide">Slide 5</li>
+    </ul>
+  </div>
+  <div class="glide__bullets" data-glide-el="controls[nav]">
+    <button class="glide__bullet" data-glide-dir="=0"></button>
+    <button class="glide__bullet" data-glide-dir="=1"></button>
+    <button class="glide__bullet" data-glide-dir="=2"></button>
+    <button class="glide__bullet" data-glide-dir="=3"></button>
+    <button class="glide__bullet" data-glide-dir="=4"></button>
+  </div>
+</div>
+{% endblock %}
+
+
+{% block javascript %}
+<script src="static/glide.min.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  new Glide('.glide', {
+    type: 'carousel',
+    startAt: 0,
+    perView: 1, // Default number of items
+    breakpoints: {
+      768: {
+        perView: 3 // Number of items above 768px
+      }
+    }
+  }).mount();
+});
+</script>
+{% endblock %}

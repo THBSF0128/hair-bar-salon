@@ -367,32 +367,60 @@ section#services > div h2 {
   font-weight: 400;
   color: #000;
 }
-/*
-button {
-  background-color: #333;
-  color: #fff;
-  padding: 0.5rem 1rem;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
+
+/* carousel */
+.glide {
+  position: relative; /* Position relative to contain absolutely positioned elements */
 }
-*/
-/*
-form {
+
+.glide__arrows {
+  position: absolute;
+  top: 50%;
+  width: 100%;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  pointer-events: none; /* Allow clicks through the container */
 }
 
-form label {
-  margin-top: 1rem;
+.glide__arrow {
+  pointer-events: auto; /* Allow clicks on the buttons */
+  background: none;
+  border: none;
+  font-size: 2em;
+  color: #333;
+  cursor: pointer;
+  outline: none;
+  padding: 0 20px;
+  transition: color 0.2s;
 }
 
-form input, form textarea {
-  padding: 0.5rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+.glide__arrow:hover {
+  color: #000;
 }
-*/
+
+.glide__arrow--left {
+  text-align: left;
+}
+
+.glide__arrow--right {
+  text-align: right;
+}
+
+.glide__track {
+  padding: 0 40px; /* Space for arrows, adjust as needed */
+}
+
+.glide__slide {
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+  background: #eee;
+}
+/* end carousel */
+
+
+
 .infooter {
   display: flex;
   justify-content: center;
