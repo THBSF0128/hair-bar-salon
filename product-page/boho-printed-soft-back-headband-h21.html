@@ -53,13 +53,13 @@
         <div>
           <a href="https://www.facebook.com/THBSF" target="_blank" ><img src="../static/img/fb.png" width="28" height="28" ></a>
           <a href="https://instagram.com/thehairbarsalon_" target="_blank" ><img src="../static/img/ig.png" width="28" height="28" ></a>
-          <a id="shopping-bag" >
+          <button id="shopping-bag" class="snipcart-checkout">
             <svg width="24" height="28.8" viewBox="0 0 164.9 196.4" preserveAspectRatio="xMinYMax meet" data-hook="svg-icon-9">
               <path d="M81.9 11.5c-18.8 0-34.1 16-34.1 35.7v18.1h7.8V47.2c0-15.4 11.8-27.9 26.4-27.9 14.5 0 26.4 12.5 26.4 27.9v18.1h6.6V64h1.1V47.2c-.1-19.7-15.4-35.7-34.2-35.7z"></path>
               <path d="M156.9 70.5v118H8v-118h148.9m8-8H0v134h164.9v-134z"></path>
             </svg>
-            <div>1</div>
-          </a>
+            <span class="snipcart-items-count"></span>
+          </button>
         </div>
       </div>
       <div class="navtainer">
@@ -75,6 +75,13 @@
             
             <li><a href="../book-online.html">Book Online</a></li>
             <li><a class="get-in-touch" href="#">Get In Touch</a></li>
+            <li>
+              <div>
+                <a href="https://www.facebook.com/THBSF" target="_blank" ><img src="../static/img/fb.png" width="28" height="28" ></a>
+                <a href="https://instagram.com/thehairbarsalon_" target="_blank" ><img src="../static/img/ig.png" width="28" height="28" ></a>          
+              </div>
+              <a href="tel:5594491525" >(559) 449-1525</a>
+            </li>
           </ul>
         </nav>
         <button class="menu-toggle" aria-label="Toggle menu">
@@ -90,7 +97,7 @@
   <div>
     <div class="breadcrumb-container">
       <div class="breadcrumb">
-        <a href="../index.html">Home</a> / <a href="../shop.html">Shop</a> / <span>B3 Color Care Shampoo</span>
+        <a href="../index.html">Home</a> / <a href="../shop.html">Shop</a> / <span>BOHO Printed Soft Back Headband H21</span>
       </div>
       <div class="navigation-links">
         <a href="boho-printed-soft-back-headband-h22.html" class="prev">&lt; Prev</a>
@@ -102,7 +109,7 @@
     <img src="../static/img/product/BOHO_Printed_Soft_Back_Headband_H21.png" >
     <div class="product-info">
       <h1>BOHO Printed Soft Back Headband H21</h1>
-      <h2>9.00</h2>
+      <h2>$9.00</h2>
     </div>
 
     
@@ -112,15 +119,45 @@
       data-item-name="BOHO Printed Soft Back Headband H21"
       data-item-price="9.00"
       data-item-url="boho-printed-soft-back-headband-h21"
-      data-item-description="N/A">
+      data-item-description="">
       Add to cart
     </button>
     
+
+    <p></p>
 
   </div>
 </div>
 
   </main>
+  <div class="infooter">
+    <div>
+      <a href="https://www.thehairbarsalon.shop" target="_self" >The Hair Bar Salon</a>
+
+      <div>
+        <p>Follow</p>
+        <p>Contact</p>
+        <p>Address</p>
+      </div>
+
+      <div>
+
+        <div>
+          <a href="https://www.facebook.com/THBSF" target="_blank" ><img src="../static/img/fb.png" width="28" height="28" ></a>
+          <a href="https://instagram.com/thehairbarsalon_" target="_blank" ><img src="../static/img/ig.png" width="28" height="28" ></a>  
+        </div>
+
+        <a href="tel:5594491525">(559) 449-1525</a>
+  
+        <div>
+          <p>2416 W. Shaw Ave suite 106</p>
+          <p>Fresno, CA, USA</p>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
   <footer>
     <p>&copy; 2024 The Hair Bar Salon. All rights reserved.</p>
   </footer>
@@ -130,27 +167,20 @@ const navLinks = document.querySelector('.nav-links');
 menuToggle.addEventListener('click', () => {
   navLinks.classList.toggle('active');
   menuToggle.classList.toggle('active');
+  document.body.classList.toggle('scrolly');
 });
-
+/*
 const sidebar = document.getElementById('cart-sidebar');
 document.getElementById('shopping-bag').addEventListener('click', (e) => {
   if (!e.target.matches('#shopping-bag')) return;
   sidebar.classList.add('open');
-  
   e.stopPropagation();
-  /*
-  const closestDiv = e.target.closest('div');
-  if (!closestDiv) return;
-  const cleanedText = closestDiv.textContent.replace(/[\n\r]+|[\s]{2,}/g, ' ').trim();
-  const parsedNumber = parseInt(cleanedText, 10);  
-  console.log(parsedNumber);
-  */
 });
 
 document.getElementById('close-sidebar').addEventListener('click', () => {
   sidebar.classList.remove('open');
 });
-
+*/
 document.addEventListener('click', (e) => {
   if (e.target.matches('.increment')) {
     console.log('increment');
@@ -178,74 +208,15 @@ document.addEventListener('click', (e) => {
     console.log('view cart');
     window.location.href = '../cart.html';
   }
+  /*
   else if (sidebar.classList.contains('open')) {
     console.log(e.target);
     if (!sidebar.contains(e.target)) {
       sidebar.classList.remove('open');
     }
   }
+  */
 });
-
-sidebar.addEventListener('click', function(e) {
-  //e.stopPropagation();
-});
-/*
-document.addEventListener('snipcart.ready', function() {  
-  console.log('ready');
-  Snipcart.events.on('cart.confirmed', (data) => {
-    Snipcart.store.setState({
-      persistCart: true
-    });
-  });
-});
-*/
-/*
-document.addEventListener("snipcart.ready", () => {
-  Snipcart.events.on("snipcart.initialized", (snipcartState) => {
-    const state = Snipcart.store.getState();
-    if (state.items) {
-      console.log(state.items);
-    }
-  });
-});
-*/
-
-    document.addEventListener('snipcart.ready', () => {
-        // Function to store cart items in local storage
-        function storeCartItems() {
-            const cart = Snipcart.store.getState().cart;
-            if (cart && Array.isArray(cart.items)) {
-                const cartItems = cart.items.map(item => ({
-                    id: item.id,
-                    name: item.name,
-                    price: item.price,
-                    quantity: item.quantity
-                }));
-
-                localStorage.setItem('snipcart_items', JSON.stringify(cartItems));
-            } else {
-                localStorage.removeItem('snipcart_items'); // Clear storage if cart is empty or undefined
-            }
-        }
-
-        // Listen for cart updates
-        Snipcart.events.on('cart.updated', storeCartItems);
-
-        // Store cart items on initial load
-        storeCartItems();
-    });
-    document.addEventListener('DOMContentLoaded', () => {
-        const storedCartItems = localStorage.getItem('snipcart_items');
-
-        if (storedCartItems) {
-            const cartItems = JSON.parse(storedCartItems);
-            
-            // Example of using stored cart items
-            cartItems.forEach(item => {
-                console.log(`Item ID: ${item.id}, Name: ${item.name}, Quantity: ${item.quantity}`);
-            });
-        }
-    });
 </script>
   
 

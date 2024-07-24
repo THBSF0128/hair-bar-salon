@@ -18,14 +18,6 @@ button {
 }
 */
 
-@media (min-width: 769px) {
-  .nav-links {
-    display: flex;
-    align-items: center;
-    color: red;
-  }
-}
-
 section#shop {
   display: flex;
   justify-content: center;
@@ -42,7 +34,7 @@ section#shop {
 .product-list a.product {
   width: calc(25% - 20px); /* Adjust spacing as needed */
   margin: 10px; /* Adjust spacing as needed */
-  font-family: avenir-lt-w01_35-light1475496, avenir-lt-w05_35-light, sans-serif;
+  font-family: Avenir-Light, sans-serif;
   color: #000;
   text-decoration: none;
   display: flex;
@@ -75,6 +67,7 @@ section#shop {
   margin: 0 0 10px;
   font-size: 15px;
   line-height: 20px;
+  font-weight: 400;
 }
 .product-list a.product p {
   margin: 0 0 10px;
@@ -121,6 +114,13 @@ section.product > div {
   flex-direction: column;
   justify-content: center;
 }
+section.product > div > p {
+  font-family: Avenir-Light, sans-serif;
+  font-size: 15px;
+  line-height: 23px;
+  font-weight: 400;
+  margin-top: 34px;
+}
 .breadcrumb-container {
   display: flex;
   justify-content: space-between;
@@ -166,7 +166,69 @@ height: 100%;
 max-height: 551px;
 object-fit: contain;
 }
-section.product > div h1,
+
+section.product > div h1 {
+  font-family: BrandonGrotesque-Light, sans-serif;
+  margin: 20px 0 10px 0;
+  padding: 0;
+  vertical-align: baseline;
+  box-sizing: border-box;
+  line-height: 1.2em !important;
+  word-wrap: break-word;
+  font-size: 26px;
+  color: #000;
+  font-weight: 400;
+  vertical-align: baseline;
+  box-sizing: border-box;
+  line-height: 1.2em !important;
+  word-wrap: break-word;
+}
 section.product > div h2 {
+  font-family: Avenir-Light, sans-serif;
+  font-size: 22px;
+  font-weight: 400;
+  background: transparent;
+  border: 0;
+  margin: 0 0 20px 0;
+  outline: 0;
+  padding: 0;
+  vertical-align: baseline;
+  box-sizing: border-box;
+}
+section.product > div button {
+  border: 0;
+  margin: 0;
+  outline: 0;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  display: block;
   text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 100px;
+  border-style: solid;
+  transition: background-color .2s ease-in-out,border-color .2s ease-in-out,color .2s ease-in-out,border-width .2s ease-in-out;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px 16px;
+  border-color: #aabcbf;
+  border-radius: 0px;
+  color: #FFFFFF;
+  background-color: rgb(170, 188, 191);
+  border-width: 0;
+  font-size: 15px;
+  min-height: 42.6px;
+  width: 100%;
+}
+section.product > div button[disabled=disabled],
+section.product > div button:disabled {
+  border-color: #aabcbf;
+  background-color: #808080;
+}
+@media (min-width: 460px) {
+  section.product > div button {
+    max-width: 241px;  
+  }
 }

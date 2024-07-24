@@ -1,39 +1,14 @@
 @font-face {
-  font-family:"Brandon-Grot-W01-Light";
-  src:url("https://static.parastorage.com/services/third-party/fonts/user-site-fonts/fonts/69b40392-453a-438a-a121-a49e5fbc9213.woff2") format("woff2"),url("https://static.parastorage.com/services/third-party/fonts/user-site-fonts/fonts/9362bca5-b362-4543-a051-2129e2def911.woff") format("woff");
-  font-display: swap;
-}
-@font-face{
-  font-family:"Brandon-Grot-W05-Light";
-  src: url("https://static.parastorage.com/services/santa-resources/resources/viewer/user-site-fonts/fonts/BrandonGrot/v1/BrandonGrotesqueCondW05-Lt.woff2") format("woff2"),
-  url("https://static.parastorage.com/services/santa-resources/resources/viewer/user-site-fonts/fonts/BrandonGrot/v1/BrandonGrotesqueCondW05-Lt.woff") format("woff");
-  font-display: swap;
+  font-family: 'Avenir-Light';
+  src: url('fonts/Avenir-Light.woff2') format('woff2'),
+       url('fonts/Avenir-Light.woff') format('woff'),
+       url('fonts/Avenir-Light.ttf') format('truetype'),
+       url('fonts/Avenir-Light.eot') format('embedded-opentype');
 }
 @font-face {
-  font-family:"Avenir-LT-W01_35-Light1475496";
-  src:url("https://static.parastorage.com/services/third-party/fonts/user-site-fonts/fonts/0078f486-8e52-42c0-ad81-3c8d3d43f48e.woff2") format("woff2"),url("https://static.parastorage.com/services/third-party/fonts/user-site-fonts/fonts/908c4810-64db-4b46-bb8e-823eb41f68c0.woff") format("woff");
-  font-display: swap;
-}
-@font-face {
-  font-family: "Avenir-LT-W05_35-Light";
-  src: url("https://static.parastorage.com/services/santa-resources/resources/viewer/user-site-fonts/fonts/Avenir_Family_Pack/v1/AvenirLTW05-35Light.woff2") format("woff2"),
-  url("https://static.parastorage.com/services/santa-resources/resources/viewer/user-site-fonts/fonts/Avenir_Family_Pack/v1/AvenirLTW05-35Light.woff") format("woff");
-  font-display: swap;
-}
-@font-face {
-  font-family: "Helvetica-W01-Roman";
-  src: url("https://static.parastorage.com/services/santa-resources/dist/viewer/user-site-fonts/fonts/Helvetica/v3/HelveticaLTW04-Roman.woff2") format("woff2"),url("https://static.parastorage.com/services/third-party/fonts/user-site-fonts/fonts/4021a3b9-f782-438b-aeb4-c008109a8b64.woff") format("woff");
-  font-display: swap;
-}
-@font-face {
-  font-family: "Helvetica-W02-Roman";
-  src: url("https://static.parastorage.com/services/third-party/fonts/user-site-fonts/fonts/e4bd4516-4480-43df-aa6e-4e9b9029f53e.eot?#iefix");
-  src: url("https://static.parastorage.com/services/third-party/fonts/user-site-fonts/fonts/e4bd4516-4480-43df-aa6e-4e9b9029f53e.eot?#iefix") format("eot"),url("https://static.parastorage.com/services/third-party/fonts/user-site-fonts/fonts/b56b944e-bbe0-4450-a241-de2125d3e682.woff") format("woff"),url("https://static.parastorage.com/services/third-party/fonts/user-site-fonts/fonts/7da02f05-ae8b-43a1-aeb9-83b3c0527c06.ttf") format("truetype"),url("https://static.parastorage.com/services/third-party/fonts/user-site-fonts/fonts/66cac56e-d017-4544-9d0c-f7d978f0c5c2.svg#66cac56e-d017-4544-9d0c-f7d978f0c5c2") format("svg");
-  font-display: swap;
-}
-@font-face {
-  font-family: "Helvetica-LT-W10-Roman";
-  src: url("https://static.parastorage.com/services/third-party/fonts/user-site-fonts/fonts/686a6a06-e711-4bd2-b393-8504a497bb3c.eot?#iefix");
-  src: url("https://static.parastorage.com/services/third-party/fonts/user-site-fonts/fonts/686a6a06-e711-4bd2-b393-8504a497bb3c.eot?#iefix") format("eot"),url("https://static.parastorage.com/services/third-party/fonts/user-site-fonts/fonts/6f8d1983-4d34-4fa4-9110-988f6c495757.woff") format("woff"),url("https://static.parastorage.com/services/third-party/fonts/user-site-fonts/fonts/7903ee3f-e9ab-4bdc-b7d2-d232de2da580.ttf") format("truetype"),url("https://static.parastorage.com/services/third-party/fonts/user-site-fonts/fonts/9c58e9ea-fdea-4b9c-b0f9-0a2157389ed0.svg#9c58e9ea-fdea-4b9c-b0f9-0a2157389ed0") format("svg");
-  font-display: swap;
+  font-family: 'BrandonGrotesque-Light';
+  src: url('fonts/BrandonGrotesque-Light.woff2') format('woff2'),
+       url('fonts/BrandonGrotesque-Light.woff') format('woff'),
+       url('fonts/BrandonGrotesque-Light.ttf') format('truetype'),
+       url('fonts/BrandonGrotesque-Light.eot') format('embedded-opentype');
 }

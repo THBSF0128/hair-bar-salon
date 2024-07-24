@@ -32,13 +32,13 @@
         <div>
           <a href="https://www.facebook.com/THBSF" target="_blank" ><img src="{{ abs_path | safe }}static/img/fb.png" width="28" height="28" ></a>
           <a href="https://instagram.com/thehairbarsalon_" target="_blank" ><img src="{{ abs_path | safe }}static/img/ig.png" width="28" height="28" ></a>
-          <a id="shopping-bag" >
+          <button id="shopping-bag" class="snipcart-checkout">
             <svg width="24" height="28.8" viewBox="0 0 164.9 196.4" preserveAspectRatio="xMinYMax meet" data-hook="svg-icon-9">
               <path d="M81.9 11.5c-18.8 0-34.1 16-34.1 35.7v18.1h7.8V47.2c0-15.4 11.8-27.9 26.4-27.9 14.5 0 26.4 12.5 26.4 27.9v18.1h6.6V64h1.1V47.2c-.1-19.7-15.4-35.7-34.2-35.7z"></path>
               <path d="M156.9 70.5v118H8v-118h148.9m8-8H0v134h164.9v-134z"></path>
             </svg>
-            <div>1</div>
-          </a>
+            <span class="snipcart-items-count"></span>
+          </button>
         </div>
       </div>
       <div class="navtainer">
@@ -54,6 +54,13 @@
             {#<li><a href="#">Plans & Pricing</a></li>#}
             <li><a href="{{ abs_path | safe }}book-online.html">Book Online</a></li>
             <li><a class="get-in-touch" href="#">Get In Touch</a></li>
+            <li>
+              <div>
+                <a href="https://www.facebook.com/THBSF" target="_blank" ><img src="{{ abs_path | safe }}static/img/fb.png" width="28" height="28" ></a>
+                <a href="https://instagram.com/thehairbarsalon_" target="_blank" ><img src="{{ abs_path | safe }}static/img/ig.png" width="28" height="28" ></a>          
+              </div>
+              <a href="tel:5594491525" >(559) 449-1525</a>
+            </li>
           </ul>
         </nav>
         <button class="menu-toggle" aria-label="Toggle menu">

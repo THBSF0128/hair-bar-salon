@@ -21,6 +21,34 @@
   <main>
     {% block content %}{% endblock %}
   </main>
+  <div class="infooter">
+    <div>
+      <a href="https://www.thehairbarsalon.shop" target="_self" >The Hair Bar Salon</a>
+
+      <div>
+        <p>Follow</p>
+        <p>Contact</p>
+        <p>Address</p>
+      </div>
+
+      <div>
+
+        <div>
+          <a href="https://www.facebook.com/THBSF" target="_blank" ><img src="{{ abs_path | safe }}static/img/fb.png" width="28" height="28" ></a>
+          <a href="https://instagram.com/thehairbarsalon_" target="_blank" ><img src="{{ abs_path | safe }}static/img/ig.png" width="28" height="28" ></a>  
+        </div>
+
+        <a href="tel:5594491525">(559) 449-1525</a>
+  
+        <div>
+          <p>2416 W. Shaw Ave suite 106</p>
+          <p>Fresno, CA, USA</p>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
   <footer>
     <p>&copy; 2024 The Hair Bar Salon. All rights reserved.</p>
   </footer>
@@ -30,27 +58,20 @@ const navLinks = document.querySelector('.nav-links');
 menuToggle.addEventListener('click', () => {
   navLinks.classList.toggle('active');
   menuToggle.classList.toggle('active');
+  document.body.classList.toggle('scrolly');
 });
-
+/*
 const sidebar = document.getElementById('cart-sidebar');
 document.getElementById('shopping-bag').addEventListener('click', (e) => {
   if (!e.target.matches('#shopping-bag')) return;
   sidebar.classList.add('open');
-  
   e.stopPropagation();
-  /*
-  const closestDiv = e.target.closest('div');
-  if (!closestDiv) return;
-  const cleanedText = closestDiv.textContent.replace(/[\n\r]+|[\s]{2,}/g, ' ').trim();
-  const parsedNumber = parseInt(cleanedText, 10);  
-  console.log(parsedNumber);
-  */
 });
 
 document.getElementById('close-sidebar').addEventListener('click', () => {
   sidebar.classList.remove('open');
 });
-
+*/
 document.addEventListener('click', (e) => {
   if (e.target.matches('.increment')) {
     console.log('increment');
@@ -78,74 +99,15 @@ document.addEventListener('click', (e) => {
     console.log('view cart');
     window.location.href = '{{ abs_path }}cart.html';
   }
+  /*
   else if (sidebar.classList.contains('open')) {
     console.log(e.target);
     if (!sidebar.contains(e.target)) {
       sidebar.classList.remove('open');
     }
   }
+  */
 });
-
-sidebar.addEventListener('click', function(e) {
-  //e.stopPropagation();
-});
-/*
-document.addEventListener('snipcart.ready', function() {  
-  console.log('ready');
-  Snipcart.events.on('cart.confirmed', (data) => {
-    Snipcart.store.setState({
-      persistCart: true
-    });
-  });
-});
-*/
-/*
-document.addEventListener("snipcart.ready", () => {
-  Snipcart.events.on("snipcart.initialized", (snipcartState) => {
-    const state = Snipcart.store.getState();
-    if (state.items) {
-      console.log(state.items);
-    }
-  });
-});
-*/
-
-    document.addEventListener('snipcart.ready', () => {
-        // Function to store cart items in local storage
-        function storeCartItems() {
-            const cart = Snipcart.store.getState().cart;
-            if (cart && Array.isArray(cart.items)) {
-                const cartItems = cart.items.map(item => ({
-                    id: item.id,
-                    name: item.name,
-                    price: item.price,
-                    quantity: item.quantity
-                }));
-
-                localStorage.setItem('snipcart_items', JSON.stringify(cartItems));
-            } else {
-                localStorage.removeItem('snipcart_items'); // Clear storage if cart is empty or undefined
-            }
-        }
-
-        // Listen for cart updates
-        Snipcart.events.on('cart.updated', storeCartItems);
-
-        // Store cart items on initial load
-        storeCartItems();
-    });
-    document.addEventListener('DOMContentLoaded', () => {
-        const storedCartItems = localStorage.getItem('snipcart_items');
-
-        if (storedCartItems) {
-            const cartItems = JSON.parse(storedCartItems);
-            
-            // Example of using stored cart items
-            cartItems.forEach(item => {
-                console.log(`Item ID: ${item.id}, Name: ${item.name}, Quantity: ${item.quantity}`);
-            });
-        }
-    });
 </script>
   {% block javascript %}{% endblock %}
 </body>

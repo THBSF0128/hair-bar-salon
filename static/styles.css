@@ -1,15 +1,16 @@
 /* Global Styles */
 body {
-  /*font-family: Arial, sans-serif;*/
-  font-family: avenir-lt-w01_35-light1475496, avenir-lt-w05_35-light, sans-serif;
+  font-family: Avenir-Light, sans-serif;
   margin: 0;
   padding: 0;
   background-color: #fff;
   color: #000;
 }
-
+body.scrolly {
+  overflow: hidden;
+}
 p {
-  font-family: avenir-lt-w01_35-light1475496, avenir-lt-w05_35-light, sans-serif;
+  font-family: Avenir-Light, sans-serif;
   color: #000;
 }
 
@@ -158,7 +159,7 @@ header {
   font-size: 14px;
   text-decoration: none;
   color: #000;
-  font-family: avenir-lt-w01_35-light1475496, avenir-lt-w05_35-light, sans-serif;
+  font-family: Avenir-Light, sans-serif;
 }
 .top-bar > div {
   display: flex;
@@ -167,23 +168,28 @@ header {
 .top-bar > div > a:nth-child(2) {
   margin-left: 3px;
 }
-.top-bar > div > a#shopping-bag {
+.top-bar > div > button#shopping-bag {
   width: 24px;
   height: 28.58px;
   position: relative;
   margin: -12px 0 0 10px;
-  text-decoration: none;
   color: #000;
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  text-transform: none;
   cursor: pointer;
+  outline: none;
 }
-#shopping-bag > svg, #shopping-bag > svg > path {
+button#shopping-bag > svg, button#shopping-bag > svg > path {
   pointer-events: none;
 }
-#shopping-bag > div {
+button#shopping-bag > span {
   position: absolute;
   width: 24px;
   height: 28.58px;
-  top: 0;
+  top: 3px;
   left: 0;
   bottom: 0;
   right: 0;
@@ -205,14 +211,15 @@ header {
 nav ul {
   list-style: none;
   display: flex;
-  justify-content: center;
+  /*justify-content: center;*/
   padding: 0;
+  margin: 0;
 }
 
 nav ul li a {
   color: rgb(39, 39, 39);
   text-decoration: none;
-  font-family: avenir-lt-w01_35-light1475496, avenir-lt-w05_35-light, sans-serif;
+  font-family: Avenir-Light, sans-serif;
   font-size: 14px;
 }
 
@@ -262,15 +269,115 @@ form input, form textarea {
   border-radius: 4px;
 }
 
+.infooter {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3em;
+}
+.infooter > div {
+  width: 100%;
+  max-width: 60rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.infooter > div > a {
+  text-decoration: none;
+  color: #000;
+  font-size: 22px;
+  font-family: BrandonGrotesque-Light, sans-serif;
+  font-weight: 400;
+  margin-top: 1em;
+}
+/*
+.infooter > div > div:nth-child(2) {
+  width: 100%;
+  max-width: 60rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 2em;
+}
+*/
+.infooter > div > div:nth-child(2) {
+  display: none;
+}
+.infooter > div > div:nth-child(3) {
+  width: 100%;
+  max-width: 60rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.infooter > div > div:nth-child(3) > div:nth-child(1) {
+  order: 3;
+}
+.infooter > div > div:nth-child(3) > div:nth-child(3) {
+  margin: 1em 0;
+}
+.infooter > div > div:nth-child(3) > div:nth-child(3) > p {
+  margin: 10px 0;
+  text-align: center;
+}
+.infooter > div > div:nth-child(3) > a {
+  text-decoration: none;
+  color: #000;
+  margin-top: 2em;
+}
+.infooter > div > div > div > a:nth-child(1) {
+  margin-right: 0px;
+}
+.infooter > div > div > p {
+  width: calc(100% / 3);
+  text-align: center;
+  box-sizing: border-box;
+}
 footer {
   background-color: rgb(117, 117, 117);
   color: #000;
-  font-family: avenir-lt-w01_35-light1475496, avenir-lt-w05_35-light, sans-serif;
+  font-family: Avenir-Light, sans-serif;
   width: 100%;
   height: 45px;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@media (min-width: 768px) {
+  .infooter > div > div:nth-child(2) {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 60rem;
+  }
+  .infooter > div > div:nth-child(3) {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .infooter > div > div:nth-child(3) > div:nth-child(1) {
+    order: 0;
+  }
+  .infooter > div > div > div,
+  .infooter > div > div > a {
+    flex-basis: calc(100% / 3);
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+  }
+  .infooter > div > div > div:nth-child(3) {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .infooter > div > div > div > p {
+    margin: 0 0 10px;
+  }
+  .infooter > div > div:nth-child(3) > a {
+    margin-top: 0;
+  }
+  .infooter > div > div:nth-child(3) > div:nth-child(3) {
+    margin: 0;
+  }
 }
 
 
@@ -300,13 +407,6 @@ header {
     text-decoration: none;
     color: rgb(39, 39, 39);
     font-size: 1.5em;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    margin: 0;
-    padding: 0;
 }
 
 nav a {
@@ -369,32 +469,55 @@ a.get-in-touch:hover {
   color: #fff;
   background-color: rgba(0, 0, 0, 1);
 }
-
-@media (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
-        position: absolute;
-        top: 70px;
-        right: 0;
-        background: white;
-        width: 100%;
-        display: none;
-        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    }
-
-    nav ul.active {
-        display: flex;
-    }
-
-    .menu-toggle {
-        display: flex;
-    }
+nav ul li:last-child {
+  display: none;
 }
-@media (min-width: 769px) {
-  .nav-links {
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: white;
+    width: 100%;
+    height: 100%;
+    display: none;
+    /*box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);*/
+  }
+  nav ul.active {
     display: flex;
     align-items: center;
-    color: red;
+    z-index: 8;
+    padding-top: 20%;
+  }
+  nav ul.active li {
+    margin: 1.5em 0;
+  }
+  nav ul.active li a {
+    font-size: 20px;
+  }
+  nav ul.active li a.get-in-touch {
+    font-size: 12px;
+  }
+  nav ul.active li:last-child {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  nav > ul.active > li:last-child > div a {
+    padding: 0;
+  }
+  .menu-toggle {
+    display: flex;
+    z-index: 9;
+  }
+}
+@media (min-width: 769px) {
+  nav ul {
+    display: flex;
+    align-items: center;
   }
 }
 
