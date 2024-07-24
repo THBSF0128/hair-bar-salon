@@ -2,20 +2,73 @@
 
 {% set abs_path %}{% endset %}
 
-{% block content %}
-<section id="home">
-  <div class="hero">
-    <h1>Welcome to The Hair Bar Salon</h1>
-    <p>Your top destination for quality hair care in Fresno.</p>
-  </div>
-  <div class="highlights">
-    <h2>Why Choose Us?</h2>
-    <ul>
-      <li>Top 10 Best Hair Salon in Fresno</li>
-      <li>Professional and experienced stylists</li>
-      <li>High-quality products</li>
-    </ul>
-  </div>
-</section>
+{% block head %}
+<link rel="stylesheet" href="{{ abs_path | safe }}static/contact.css">
 {% endblock %}
 
+{% block content %}
+<div class="fixed-hero">
+  <img src="static/img/bf6449_b3d4d4e2f5bf4d09a9175722d42f4a86~mv2.jpeg" >
+</div>
+<section id="home">
+  <div class="hero">
+    <h1>WELCOME TO THE<br>HAIR BAR SALON</h1>
+    <p>Commited to Quality</p>
+  </div>
+  <div class="awards">
+    <div>
+      <a href="https://www.expertise.com/ca/fresno/hair-salons" >
+        <img src="static/img/top_ca_fresno_salons.png" width="200" height="160" alt="Top Hair Salons in Fresno" title="">
+      </a>
+      <p>AWARDED TOP 10 BEST<br>HAIR SALON IN FRESNO</p>
+    </div>
+  </div>
+</section>
+
+<div id="home-contact">
+  <div>
+    <img src="static/img/8ddfc54557334e96a2eac37ab491e1c5.jpeg" >
+
+    <div class="contact-form">
+      <h2>CONTACT US</h2>
+      <div class="contact-info">
+        <p>2416 W. Shaw Ave Suite 106</p>
+        <p>Fresno, CA, USA</p>
+        <a href="tel:5594491525" >(559) 449-1525</a>
+      </div>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+      <form id="contact-form" >
+        <div class="form-group-row">
+          <div class="form-group">
+            <input type="text" id="name" name="name" placeholder="Name" required>
+          </div>
+          <div class="form-group">
+            <input type="email" id="email" name="email" placeholder="Email" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <input type="text" id="subject" name="subject" placeholder="Subject" >
+        </div>
+        <div class="form-group">
+          <textarea id="message" name="message" placeholder="Type your message here..."></textarea>
+        </div>
+        <div class="form-actions">
+          <button id="submit-contact" type="submit">Submit</button>
+        </div>
+      </form>
+      <div id="form-message"></div>
+    </div>
+  </div>
+</div>
+
+<div id="salon-map">
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3227.8034991159234!2d-119.83823845913858!3d36.80852025836135!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8094663331526acf%3A0x74730fa4920b7362!2s2416%20W%20Shaw%20Ave%20%23%20106%2C%20Fresno%2C%20CA%2093711!5e0!3m2!1sen!2sus!4v1721844275861!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+{% endblock %}
+
+{% block javascript %}
+<script src="{{ abs_path | safe }}static/contact.js"></script>
+{% endblock %}

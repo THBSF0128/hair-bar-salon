@@ -1,0 +1,92 @@
+.contact-form {
+    width: 90%;
+    max-width: 600px;
+    background-color: white;
+    padding: 20px;
+}
+
+.contact-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+
+    font-family: BrandonGrotesque-Light, sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.contact-info {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    margin: 5px 0;
+}
+.contact-info a {
+  text-decoration: none;
+  color: #000;
+  display: block;
+  margin-top: 20px;
+}
+.social-icons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.social-icons a {
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 24px;
+    color: #000;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    resize: none;
+    box-sizing: border-box;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"] {
+    height: 40px;
+}
+
+.form-group textarea {
+    height: 100px;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: center;
+}
+
+.form-actions button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #000;
+    color: white;
+    cursor: pointer;
+    border-radius: 3px;
+    width: 100%;
+}
+
+@media (min-width: 600px) {
+    .form-group-row {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .form-group-row .form-group {
+        width: 48%;
+    }
+}

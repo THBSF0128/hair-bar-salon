@@ -37,12 +37,6 @@ def render_products(items):
         with open(output_file, 'w') as f:
             f.write(output)
 
-services = [
-    {'name': 'Haircuts', 'description': 'Professional haircuts for all styles.', 'price': '$30'},
-    {'name': 'Coloring', 'description': 'High-quality hair coloring services.', 'price': '$50'}
-    # Add more services as needed
-]
-
 #products = [
 #    {'name': 'Shampoo', 'description': 'High-quality shampoo.', 'price': '$10', 'image': 'shampoo.jpg'},
 #    {'name': 'Conditioner', 'description': 'High-quality conditioner.', 'price': '$12', 'image': 'conditioner.jpg'}
@@ -53,13 +47,12 @@ with open('products.json', 'r') as file:
 # Define the pages to be generated
 pages = [
     {'template': 'index.html', 'context': {'title': 'Home'}, 'output': 'index.html'},
-    {'template': 'services.html', 'context': {'title': 'Services', 'services': services}, 'output': 'services.html'},
     {'template': 'shop.html', 'context': {'title': 'Shop', 'products': products}, 'output': 'shop.html'},
     {'template': 'contact.html', 'context': {'title': 'Contact'}, 'output': 'contact.html'},
     {'template': 'product.html', 'context': {'title': 'Product'}, 'output': 'product.html'},
-    {'template': 'stylists.html', 'context': {'title': 'The Hair Bar Salon Stylists'}, 'output': 'stylists.html'},
+    {'template': 'services.html', 'context': {'title': 'Services'}, 'output': 'services.html'},
     {'template': 'book-online.html', 'context': {'title': 'Booking'}, 'output': 'book-online.html'},
-    {'template': 'cart.html', 'context': {'title': 'My cart'}, 'output': 'cart.html'}
+    {'template': 'education.html', 'context': {'title': 'Education'}, 'output': 'education.html'}
 ]
 
 # Render each page

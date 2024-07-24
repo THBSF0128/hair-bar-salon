@@ -1,4 +1,4 @@
-    <div id="cart-sidebar">
+    {#<div id="cart-sidebar">
       <div class="cart-header">
         <span id="close-sidebar">&gt;</span>
         <h2>Cart</h2>
@@ -24,7 +24,7 @@
         <div>$24.00</div>
       </div>
       <button class="view-cart-btn">View Cart</button>
-    </div>
+    </div>#}
 
     <header>
       <div class="top-bar" >
@@ -52,8 +52,10 @@
             <li><a href="{{ abs_path | safe }}index.html">Home</a></li>
             <li><a href="{{ abs_path | safe }}shop.html">Shop</a></li>
             {#<li><a href="#">Plans & Pricing</a></li>#}
+            <li><a href="{{ abs_path | safe }}education.html">Education</a></li>
+            <li><a href="{{ abs_path | safe }}services.html">Services</a></li>
             <li><a href="{{ abs_path | safe }}book-online.html">Book Online</a></li>
-            <li><a class="get-in-touch" href="#">Get In Touch</a></li>
+            <li><a href="{{ abs_path | safe }}contact.html" class="get-in-touch" >Get In Touch</a></li>
             <li>
               <div>
                 <a href="https://www.facebook.com/THBSF" target="_blank" ><img src="{{ abs_path | safe }}static/img/fb.png" width="28" height="28" ></a>

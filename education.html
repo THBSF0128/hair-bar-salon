@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My cart | The Hair Bar Salon</title>
+  <title>Education | The Hair Bar Salon</title>
   <link rel="stylesheet" href="static/fonts.css">
   <link rel="stylesheet" href="static/styles.css">
   
@@ -13,37 +13,11 @@
     window.SnipcartSettings = {
       publicApiKey: 'OTA5YmQ3YzUtODBhNy00NWIzLWFkZDktNGEwODc1NjkxNjhhNjM4NTYxNDI1MTQwMzQ3MTE0',
       loadStrategy: 'on-user-interaction'
+      //templatesUrl: "snipcart-templates.html",
     };
-  
     (()=>{var c,d;(d=(c=window.SnipcartSettings).version)!=null||(c.version="3.0");var s,S;(S=(s=window.SnipcartSettings).timeoutDuration)!=null||(s.timeoutDuration=2750);var l,p;(p=(l=window.SnipcartSettings).domain)!=null||(l.domain="cdn.snipcart.com");var w,u;(u=(w=window.SnipcartSettings).protocol)!=null||(w.protocol="https");var f=window.SnipcartSettings.version.includes("v3.0.0-ci")||window.SnipcartSettings.version!="3.0"&&window.SnipcartSettings.version.localeCompare("3.4.0",void 0,{numeric:!0,sensitivity:"base"})===-1,m=["focus","mouseover","touchmove","scroll","keydown"];window.LoadSnipcart=o;document.readyState==="loading"?document.addEventListener("DOMContentLoaded",r):r();function r(){window.SnipcartSettings.loadStrategy?window.SnipcartSettings.loadStrategy==="on-user-interaction"&&(m.forEach(t=>document.addEventListener(t,o)),setTimeout(o,window.SnipcartSettings.timeoutDuration)):o()}var a=!1;function o(){if(a)return;a=!0;let t=document.getElementsByTagName("head")[0],e=document.querySelector("#snipcart"),i=document.querySelector(`src[src^="${window.SnipcartSettings.protocol}://${window.SnipcartSettings.domain}"][src$="snipcart.js"]`),n=document.querySelector(`link[href^="${window.SnipcartSettings.protocol}://${window.SnipcartSettings.domain}"][href$="snipcart.css"]`);e||(e=document.createElement("div"),e.id="snipcart",e.setAttribute("hidden","true"),document.body.appendChild(e)),v(e),i||(i=document.createElement("script"),i.src=`${window.SnipcartSettings.protocol}://${window.SnipcartSettings.domain}/themes/v${window.SnipcartSettings.version}/default/snipcart.js`,i.async=!0,t.appendChild(i)),n||(n=document.createElement("link"),n.rel="stylesheet",n.type="text/css",n.href=`${window.SnipcartSettings.protocol}://${window.SnipcartSettings.domain}/themes/v${window.SnipcartSettings.version}/default/snipcart.css`,t.prepend(n)),m.forEach(g=>document.removeEventListener(g,o))}function v(t){!f||(t.dataset.apiKey=window.SnipcartSettings.publicApiKey,window.SnipcartSettings.addProductBehavior&&(t.dataset.configAddProductBehavior=window.SnipcartSettings.addProductBehavior),window.SnipcartSettings.modalStyle&&(t.dataset.configModalStyle=window.SnipcartSettings.modalStyle),window.SnipcartSettings.currency&&(t.dataset.currency=window.SnipcartSettings.currency),window.SnipcartSettings.templatesUrl&&(t.dataset.templatesUrl=window.SnipcartSettings.templatesUrl))}})();
   </script>
-      <div id="cart-sidebar">
-      <div class="cart-header">
-        <span id="close-sidebar">&gt;</span>
-        <h2>Cart</h2>
-      </div>
-      <div class="cart-content">
-        <div class="cart-item">
-          <div class="item-image">
-            <img src="static/img/product/B3_Color_Care_Conditioner.jpg" >
-          </div>
-          <div class="item-details">
-            <h3>B3 Color Care Shampoo</h3>
-            <p>$24.00</p>
-            <div class="quantity-control">
-              <button class="decrement" >-</button>
-              <input value="1" />
-              <button class="increment" >+</button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="subtotal">
-        <strong>Subtotal</strong>
-        <div>$24.00</div>
-      </div>
-      <button class="view-cart-btn">View Cart</button>
-    </div>
+      
 
     <header>
       <div class="top-bar" >
@@ -71,8 +45,10 @@
             <li><a href="index.html">Home</a></li>
             <li><a href="shop.html">Shop</a></li>
             
+            <li><a href="education.html">Education</a></li>
+            <li><a href="services.html">Services</a></li>
             <li><a href="book-online.html">Book Online</a></li>
-            <li><a class="get-in-touch" href="#">Get In Touch</a></li>
+            <li><a href="contact.html" class="get-in-touch" >Get In Touch</a></li>
             <li>
               <div>
                 <a href="https://www.facebook.com/THBSF" target="_blank" ><img src="static/img/fb.png" width="28" height="28" ></a>
@@ -90,40 +66,45 @@
       </div>
     </header>
   <main>
-    
-<section id="cart" >
-  <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; width: 100%; max-width: 60rem;" >
-    <h2>My cart</h2>
+<section id="education">
+  <div>
+    <div>
+      <h1>Want to host a class?</h1>
+      <p>Rent out our space for your next salon education class!</p>
+    </div>
+    <div>
+      <h1>Seeking Salon Education?</h1>
+      <p>Contact our Salon Owner/Educator on IG: @HairByGena_</p>
+      <h1>COURSES:</h1>
+      <ul>
+        <li>BALAYAGE</li>
+        <li>COLOR CORRECTION</li>
+        <li>BUSINESS 101</li>
+        <li>6 METHODS OF HAIR EXTENSION CERTIFICATIONS</li>
+      </ul>
+    </div>
   </div>
 </section>
-
-  </main>
+</main>
   <div class="infooter">
     <div>
       <a href="https://www.thehairbarsalon.shop" target="_self" >The Hair Bar Salon</a>
-
       <div>
         <p>Follow</p>
         <p>Contact</p>
         <p>Address</p>
       </div>
-
       <div>
-
         <div>
           <a href="https://www.facebook.com/THBSF" target="_blank" ><img src="static/img/fb.png" width="28" height="28" ></a>
           <a href="https://instagram.com/thehairbarsalon_" target="_blank" ><img src="static/img/ig.png" width="28" height="28" ></a>  
         </div>
-
         <a href="tel:5594491525">(559) 449-1525</a>
-  
         <div>
           <p>2416 W. Shaw Ave suite 106</p>
           <p>Fresno, CA, USA</p>
         </div>
-
       </div>
-
     </div>
   </div>
   <footer>
@@ -135,58 +116,9 @@ const navLinks = document.querySelector('.nav-links');
 menuToggle.addEventListener('click', () => {
   navLinks.classList.toggle('active');
   menuToggle.classList.toggle('active');
-  document.body.classList.toggle('scrolly');
-});
-/*
-const sidebar = document.getElementById('cart-sidebar');
-document.getElementById('shopping-bag').addEventListener('click', (e) => {
-  if (!e.target.matches('#shopping-bag')) return;
-  sidebar.classList.add('open');
-  e.stopPropagation();
-});
-
-document.getElementById('close-sidebar').addEventListener('click', () => {
-  sidebar.classList.remove('open');
-});
-*/
-document.addEventListener('click', (e) => {
-  if (e.target.matches('.increment')) {
-    console.log('increment');
-    const cartItem = e.target.closest('.cart-item');
-    if (cartItem) {
-      console.log(cartItem);
-    }
-    const itemDetails = e.target.closest('.item-details');
-    if (itemDetails) {
-      console.log(itemDetails);
-    }
-  }
-  else if (e.target.matches('.decrement')) {
-    console.log('decrement');
-    const cartItem = e.target.closest('.cart-item');
-    if (cartItem) {
-      console.log(cartItem);
-    }
-    const itemDetails = e.target.closest('.item-details');
-    if (itemDetails) {
-      console.log(itemDetails);
-    }
-  }
-  else if (e.target.matches('.view-cart-btn')) {
-    console.log('view cart');
-    window.location.href = 'cart.html';
-  }
-  /*
-  else if (sidebar.classList.contains('open')) {
-    console.log(e.target);
-    if (!sidebar.contains(e.target)) {
-      sidebar.classList.remove('open');
-    }
-  }
-  */
+  document.body.classList.toggle('noscrolly');
 });
 </script>
   
-
 </body>
 </html>

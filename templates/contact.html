@@ -1,25 +1,53 @@
 {% extends "base.html" %}
 
-{% block content %}
-<section id="contact">
-  <h2>Contact Us</h2>
-  <div class="contact-details">
-    <p>Address: 123 Salon St, Fresno, CA</p>
-    <p>Phone: (123) 456-7890</p>
-    <form action="contact.html" method="post">
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name">
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email">
-      <label for="message">Message:</label>
-      <textarea id="message" name="message"></textarea>
-      <button type="submit">Send</button>
-    </form>
-  </div>
-  <div class="social-media">
-    <a href="https://facebook.com/thehairbarsalon"><img src="static/facebook-icon.png" alt="Facebook"></a>
-    <a href="https://instagram.com/thehairbarsalon"><img src="static/instagram-icon.png" alt="Instagram"></a>
-  </div>
-</section>
+{% set abs_path %}{% endset %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ abs_path | safe }}static/contact.css">
 {% endblock %}
 
+{% block content %}
+<section id="contact">
+  <div>
+
+    <div class="contact-form">
+      <h2>CONTACT US</h2>
+      <div class="contact-info">
+        <p>2416 W. Shaw Ave Suite 106</p>
+        <p>Fresno, CA, USA</p>
+        <a href="tel:5594491525" >(559) 449-1525</a>
+      </div>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+      <form id="contact-form" >
+        <div class="form-group-row">
+          <div class="form-group">
+            <input type="text" id="name" name="name" placeholder="Name" required>
+          </div>
+          <div class="form-group">
+            <input type="email" id="email" name="email" placeholder="Email" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <input type="text" id="subject" name="subject" placeholder="Subject" >
+        </div>
+        <div class="form-group">
+          <textarea id="message" name="message" placeholder="Type your message here..."></textarea>
+        </div>
+        <div class="form-actions">
+          <button id="submit-contact" type="submit">Submit</button>
+        </div>
+      </form>
+      <div id="form-message"></div>
+    </div>
+
+  </div>
+</div>
+
+{% endblock %}
+
+{% block javascript %}
+<script src="{{ abs_path | safe }}static/contact.js"></script>
+{% endblock %}
