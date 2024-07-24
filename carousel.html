@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Carousel</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.carousel {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    overflow: hidden;
+}
+
+.carousel-track-container {
+    overflow: hidden;
+    width: 100%;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+}
+
+.carousel-slide {
+    min-width: 100%;
+    transition: transform 0.3s ease-in-out;
+}
+
+.carousel-slide img {
+    width: 100%;
+    display: block;
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.carousel-button.prev {
+    left: 10px;
+}
+
+.carousel-button.next {
+    right: 10px;
+}
+
+@media (min-width: 768px) {
+    .carousel-slide {
+        min-width: 33.3333%;
+    }
+}
+
+</style>
+</head>
+<body>
+    <div class="carousel">
+        <button class="carousel-button prev">&lt;</button>
+        <div class="carousel-track-container">
+            <ul class="carousel-track">
+                <li class="carousel-slide current-slide"><img src="static/img/product/BOHO_Printed_Soft_Back_Headband_H12.png" alt="Product 1"></li>
+                <li class="carousel-slide"><img src="static/img/product/BOHO_Printed_Soft_Back_Headband_H12.png" alt="Product 2"></li>
+                <li class="carousel-slide"><img src="static/img/product/BOHO_Printed_Soft_Back_Headband_H12.png" alt="Product 3"></li>
+                <li class="carousel-slide"><img src="static/img/product/BOHO_Printed_Soft_Back_Headband_H12.png" alt="Product 4"></li>
+            </ul>
+        </div>
+        <button class="carousel-button next">&gt;</button>
+    </div>
+<script>
+const track = document.querySelector('.carousel-track');
+const slides = Array.from(track.children);
+const nextButton = document.querySelector('.carousel-button.next');
+const prevButton = document.querySelector('.carousel-button.prev');
+
+const slideWidth = slides[0].getBoundingClientRect().width;
+
+// Arrange the slides next to one another
+const setSlidePosition = (slide, index) => {
+    slide.style.left = slideWidth * index + 'px';
+};
+slides.forEach(setSlidePosition);
+
+const moveToSlide = (track, currentSlide, targetSlide) => {
+    track.style.transform = 'translateX(-' + targetSlide.style.left + ')';
+    currentSlide.classList.remove('current-slide');
+    targetSlide.classList.add('current-slide');
+};
+
+// When I click left, move slides to the left
+prevButton.addEventListener('click', e => {
+    const currentSlide = track.querySelector('.current-slide');
+    const prevSlide = currentSlide.previousElementSibling;
+
+    if (prevSlide) {
+        moveToSlide(track, currentSlide, prevSlide);
+    }
+});
+
+// When I click right, move slides to the right
+nextButton.addEventListener('click', e => {
+    const currentSlide = track.querySelector('.current-slide');
+    const nextSlide = currentSlide.nextElementSibling;
+
+    if (nextSlide) {
+        moveToSlide(track, currentSlide, nextSlide);
+    }
+});
+
+// Swipe functionality
+let startX, moveX;
+
+track.addEventListener('touchstart', e => {
+    startX = e.touches[0].clientX;
+});
+
+track.addEventListener('touchmove', e => {
+    moveX = e.touches[0].clientX;
+});
+
+track.addEventListener('touchend', e => {
+    const currentSlide = track.querySelector('.current-slide');
+    if (startX > moveX + 50) {
+        // Swiped left
+        const nextSlide = currentSlide.nextElementSibling;
+        if (nextSlide) {
+            moveToSlide(track, currentSlide, nextSlide);
+        }
+    } else if (startX < moveX - 50) {
+        // Swiped right
+        const prevSlide = currentSlide.previousElementSibling;
+        if (prevSlide) {
+            moveToSlide(track, currentSlide, prevSlide);
+        }
+    }
+});
+</script>
+</body>
+</html>

@@ -1,5 +1,4 @@
 html, body {
-  touch-action: none;
   overscroll-behavior: none;
 }
 body {
@@ -485,20 +484,15 @@ footer {
     font-size: 22px;
   }
   .fixed-hero {
-    height: 560px;
     width: 100%;
-    overflow: hidden;
-    position: relative;
+    height: 560px;
+    background-image: url('../static/img/bf6449_b3d4d4e2f5bf4d09a9175722d42f4a86~mv2.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
   }
   .fixed-hero img {
-    position: fixed;
-    top: 0;
-    object-fit: cover;
-    object-position: 50% 50%;
-    width: 100%;
-    height: auto;
-    z-index: -1;
-    overflow: hidden;
+    display: none;
   }
   .awards > div {
     flex-direction: row;
