@@ -15,7 +15,6 @@ p {
   font-family: Avenir-Light, sans-serif;
   color: #000;
 }
-
 #cart-sidebar {
   position: fixed;
   top: 0;
@@ -640,6 +639,11 @@ a.get-in-touch:hover {
 }
 nav ul li:last-child {
   display: none;
+}
+@media (max-width: 32.5rem) {
+  main {
+    margin: 100px 0;
+  }
 }
 @media (max-width: 768px) {
   nav ul {
