@@ -1,0 +1,172 @@
+[
+    {
+        "data-item-name": "B3 Color Care Shampoo",
+        "price": "$24.00",
+        "data-item-image": "B3_Color_Care_Shampoo.jpg",
+        "data-item-description": "",
+        "data-item-id": "color-care-shampoo-brazilian-bond-builder",
+        "data-item-price": "24.00",
+        "data-item-url": "color-care-shampoo-brazilian-bond-builder",
+        "in-stock": true
+    },
+    {
+        "data-item-name": "B3 Color Care Conditioner",
+        "price": "$24.00",
+        "data-item-image": "B3_Color_Care_Conditioner.jpg",
+        "data-item-description": "",
+        "data-item-id": "color-care-conditioner-brazilian-bond-builder",
+        "data-item-price": "24.00",
+        "data-item-url": "color-care-conditioner-brazilian-bond-builder",
+        "in-stock": true
+    },
+    {
+        "data-item-name": "B3 Ionic Color Lock",
+        "price": "$24.00",
+        "data-item-image": "B3_Ionic_Color_Lock.jpg",
+        "data-item-description": "",
+        "data-item-id": "ionic-color-lock-brazilian-bond-builder",
+        "data-item-price": "24.00",
+        "data-item-url": "ionic-color-lock-brazilian-bond-builder",
+        "in-stock": true
+    },
+    {
+        "data-item-name": "B3 Extension Repair Conditioner",
+        "price": "$24.00",
+        "data-item-image": "B3_Extension_Repair_Conditioner.jpg",
+        "data-item-description": "",
+        "data-item-id": "b3-extension-repair-conditioner",
+        "data-item-price": "24.00",
+        "data-item-url": "b3-extension-repair-conditioner",
+        "in-stock": true
+    },
+    {
+        "data-item-name": "B3 Extension Repair Shampoo",
+        "price": "$24.00",
+        "data-item-image": "B3_Extension_Repair_Shampoo.jpg",
+        "data-item-description": "",
+        "data-item-id": "brazilian-blowout-extension-repair-system",
+        "data-item-price": "24.00",
+        "data-item-url": "brazilian-blowout-extension-repair-system",
+        "in-stock": true
+    },
+    {
+        "data-item-name": "B3 Ionic Extension Refresh",
+        "price": "$24.00",
+        "data-item-image": "B3_Ionic_Extension_Refresh.jpg",
+        "data-item-description": "",
+        "data-item-id": "b3-ionic-extension-refresh",
+        "data-item-price": "24.00",
+        "data-item-url": "b3-ionic-extension-refresh",
+        "in-stock": true
+    },
+    {
+        "data-item-name": "Deep Clean Shampoo",
+        "price": "$24.00",
+        "data-item-image": "Deep_Clean_Shampoo.jpg",
+        "data-item-description": "",
+        "data-item-id": "deep-clean-shampoo",
+        "data-item-price": "24.00",
+        "data-item-url": "deep-clean-shampoo",
+        "in-stock": false
+    },
+    {
+        "data-item-name": "Smooth & Shine Serum",
+        "price": "$28.00",
+        "data-item-image": "Smooth_&_Shine_Serum.jpg",
+        "data-item-description": "",
+        "data-item-id": "smooth-shine-serum",
+        "data-item-price": "28.00",
+        "data-item-url": "smooth-shine-serum",
+        "in-stock": true
+    },
+    {
+        "data-item-name": "Make Me Shine Spray Gloss",
+        "price": "$24.00",
+        "data-item-image": "Make_Me_Shine_Spray_Gloss.jpg",
+        "data-item-description": "",
+        "data-item-id": "make-me-shine-spray-gloss",
+        "data-item-price": "24.00",
+        "data-item-url": "make-me-shine-spray-gloss",
+        "in-stock": false
+    },
+    {
+        "data-item-name": "Miracle Hair Treatment Leave-in Spray (watermelon)",
+        "price": "$24.00",
+        "data-item-image": "Miracle_Hair_Treatment_Leave-in_Spray_(watermelon).jpg",
+        "data-item-description": "",
+        "data-item-id": "miracle-spray-hair-treatment",
+        "data-item-price": "24.00",
+        "data-item-url": "miracle-spray-hair-treatment",
+        "in-stock": true
+    },
+    {
+        "data-item-name": "Miracle Hair Treatment Leave in pump (coconut )",
+        "price": "$24.00",
+        "data-item-image": "Miracle_Hair_Treatment_Leave_in_pump_(coconut_).jpg",
+        "data-item-description": "",
+        "data-item-id": "miracle-hair-treatment",
+        "data-item-price": "24.00",
+        "data-item-url": "miracle-hair-treatment",
+        "in-stock": false
+    },
+    {
+        "data-item-name": "I Want Body Texture Spray",
+        "price": "$24.00",
+        "data-item-image": "I_Want_Body_Texture_Spray.jpg",
+        "data-item-description": "",
+        "data-item-id": "i-want-body-texture-spray",
+        "data-item-price": "24.00",
+        "data-item-url": "i-want-body-texture-spray",
+        "in-stock": true
+    },
+    {
+        "data-item-name": "Dry Shampoo Volume Paste",
+        "price": "$24.00",
+        "data-item-image": "Dry_Shampoo_Volume_Paste.jpg",
+        "data-item-description": "",
+        "data-item-id": "dry-shampoo-volume-paste",
+        "data-item-price": "24.00",
+        "data-item-url": "dry-shampoo-volume-paste",
+        "in-stock": true
+    },
+    {
+        "data-item-name": "Give Me Clean Hair Dry Shampoo",
+        "price": "$28.00",
+        "data-item-image": "Give_Me_Clean_Hair_Dry_Shampoo.jpg",
+        "data-item-description": "",
+        "data-item-id": "give-me-clean-hair-dry-shampoo",
+        "data-item-price": "28.00",
+        "data-item-url": "give-me-clean-hair-dry-shampoo",
+        "in-stock": true
+    },
+    {
+        "data-item-name": "Sea Salt Texture Spray",
+        "price": "$28.00",
+        "data-item-image": "Sea_Salt_Texture_Spray.jpg",
+        "data-item-description": "",
+        "data-item-id": "sea-salt-texture-spray",
+        "data-item-price": "28.00",
+        "data-item-url": "sea-salt-texture-spray",
+        "in-stock": true
+    },
+    {
+        "data-item-name": "Dry Finish Texture Spray",
+        "price": "$28.00",
+        "data-item-image": "Dry_Finish_Texture_Spray.jpg",
+        "data-item-description": "",
+        "data-item-id": "dry-finish-texture-spray",
+        "data-item-price": "28.00",
+        "data-item-url": "dry-finish-texture-spray",
+        "in-stock": false
+    },
+    {
+        "data-item-name": "Keep my Curl Defining Cream",
+        "price": "$28.00",
+        "data-item-image": "Keep_my_Curl_Defining_Cream.jpg",
+        "data-item-description": "",
+        "data-item-id": "keep-my-curl-defining-cream",
+        "data-item-price": "28.00",
+        "data-item-url": "keep-my-curl-defining-cream",
+        "in-stock": true
+    }
+]

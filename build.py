@@ -47,7 +47,7 @@ with open('products.json', 'r') as file:
 # Define the pages to be generated
 pages = [
     {'template': 'index.html', 'context': {'title': 'Home'}, 'output': 'index.html'},
-    #{'template': 'shop.html', 'context': {'title': 'Shop', 'products': products}, 'output': 'shop.html'},
+    {'template': 'shop.html', 'context': {'title': 'Shop', 'products': products}, 'output': 'shop.html'},
     {'template': 'contact.html', 'context': {'title': 'Contact'}, 'output': 'contact.html'},
     {'template': 'product.html', 'context': {'title': 'Product'}, 'output': 'product.html'},
     {'template': 'services.html', 'context': {'title': 'Services'}, 'output': 'services.html'},
